@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { type } = require('os');
 const path = require('path');
 
 module.exports = {
@@ -28,6 +29,14 @@ module.exports = {
         exclude: /node_modules/,
         use: 'babel-loader',
       },
+      {
+        test: /\.(png|jpg|svg|jpeg|gif)$/,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(css)$/,
+        use: ['style-loader', 'css-loader']
+      }
     ],
   },
   plugins: [

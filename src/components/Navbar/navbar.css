@@ -1,0 +1,14 @@
+.drop-container {
+  display: inline-block;
+}
+
+.logo {
+  max-width: 10%;
+  height: auto;
+}
+
+.nav-container {
+  max-width: 100%;
+}
+
+
