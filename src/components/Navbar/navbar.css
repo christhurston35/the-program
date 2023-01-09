@@ -1,14 +1,43 @@
-.drop-container {
-  display: inline-block;
+.dropdown-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-items a {
+  font-weight: 400;
+}
+
+.menu-container {
+  text-align: center;
+  background-color: #D3D6DB;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
-  max-width: 10%;
+  float: right;
+  max-width: 14%;
+  padding: 0.5em;
   height: auto;
 }
 
-.nav-container {
-  max-width: 100%;
+#menu-icon {
+  font-size: 2em;
+  padding: 0.5em;
 }
 
+.navbar {
+  background-color: #303841;
+  height: em;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
 
+.nav-link {
+  color: #3A4750;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 0.25em 0;
+}

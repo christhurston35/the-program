@@ -1,15 +1,18 @@
-import React from "react";
-import NavItem from "./NavItem";
+import React, { useState } from "react";
+import NavLink from "./NavLink";
 
 function NavDropdown(props) {
+
   let navItems = props.items;
 
   return (
-    <div className="drop-container">
-      <button className="drop-button" onClick={props.sectionClick}>{props.sectionLabel}</button>
-      {navItems.map((navItem, index) =>
-        <NavItem key={index} item={navItem} handleClick={props.itemClick} />
-      )}
+    <div className="menu-container">
+      <a className="nav-link" onClick={props.handleClick}>{props.sectionLabel} +</a>
+      <div style={props.style} className="dropdown-items">
+        {navItems.map((navItem, index) =>
+          <NavLink key={index} item={navItem} handleClick={props.itemClick} />
+        )}
+      </div>
     </div>
   )
 }

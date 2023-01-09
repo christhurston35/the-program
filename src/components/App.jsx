@@ -1,11 +1,12 @@
 import React from "react";
 import Navbar from "./Navbar/Navbar";
+import "./app.css";
 
 function App() {
   return (
     <div>
       <Navbar/>
-      <h1>Let's get to work!</h1>
+      <h1 style={{fontFamily: "Oswald"}}>Let's get to work!</h1>
     </div>
   )
 }
