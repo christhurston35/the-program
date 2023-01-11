@@ -1,37 +1,30 @@
-.dropdown-items {
-  display: flex;
-  flex-direction: column;
-}
+/*** Navbar proper ***/
 
-.dropdown-items a {
-  font-weight: 400;
-}
-
-.menu-container {
-  text-align: center;
-  background-color: #D3D6DB;
-  display: flex;
-  flex-direction: column;
-}
-
-.logo {
-  float: right;
-  max-width: 14%;
-  padding: 0.5em;
-  height: auto;
-}
-
-#menu-icon {
+.hamburger-icon {
   font-size: 2em;
   padding: 0.5em;
 }
 
+.logo {
+  float: right;
+  height: auto;
+  padding: 0.5em;
+  width: 14%;
+}
+
 .navbar {
   background-color: #303841;
-  height: em;
-  max-width: 100%;
+  box-shadow: 0 1px 4px;
+  height: auto;
+  width: 100%;
   overflow: hidden;
   position: relative;
+}
+
+/*** Link styling ***/
+
+.dropdown-items a {
+  font-weight: 400;
 }
 
 .nav-link {
@@ -39,5 +32,105 @@
   text-decoration: none;
   font-size: 2em;
   font-weight: 700;
-  padding: 0.25em 0;
+  padding: 0.25em 0.5em;
+}
+
+/*** Expandable menu styling ***/
+
+.container {
+  background-color: #d3d6dbe0;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-container {
+  background-color: transparent;
+  position: relative;
+}
+
+.dropdown-items {
+  background-color: transparent;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.dropdown-items-clicked {
+  max-height: 17rem;
+}
+
+.main {
+  box-shadow: -1px 1px 5px;
+  position: absolute;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+.main-clicked {
+  transform: translateX(0);
+}
+
+
+/********************************** MEDIA QUERIES ******************************/
+
+@media only screen and (min-width: 768px) {
+
+  /*** Navbar proper ***/
+
+  .container {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    text-align: left;
+    width: 100%;
+  }
+
+  .hamburger-icon {
+    display: none;
+  }
+
+  .logo {
+    float: left;
+    height: auto;
+    margin-left: 3em;
+    padding: 0.5em;
+    width: 3%;
+  }
+
+  .main {
+    box-shadow: -1px 1px 5px;
+    position: relative;
+    transform: none;
+    transition: none;
+  }
+
+  .navbar {
+    background-color: #303841;
+    box-shadow: 0 1px 4px;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  /*** Expandable menu ***/
+
+  .dropdown-items {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    max-height: none;
+    transition: max-height 0.3s ease-in-out;
+  }
 }

@@ -6,9 +6,9 @@ function NavDropdown(props) {
   let navItems = props.items;
 
   return (
-    <div className="menu-container">
+    <div className="container dropdown-container">
       <a className="nav-link" onClick={props.handleClick}>{props.sectionLabel} +</a>
-      <div style={props.style} className="dropdown-items">
+      <div className={`container dropdown-items ${props.clickedClass}`}>
         {navItems.map((navItem, index) =>
           <NavLink key={index} item={navItem} handleClick={props.itemClick} />
         )}

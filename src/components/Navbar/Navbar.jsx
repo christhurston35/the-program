@@ -30,27 +30,27 @@ function Navbar() {
   }
 
   return (
-    <div>
+    <div className="wrapper">
       <div className="navbar">
-        <FontAwesomeIcon id="menu-icon" icon={faBars} onClick={displayMenu} />
+        <FontAwesomeIcon className="hamburger-icon" icon={faBars} onClick={displayMenu} />
         <NavBrand handleClick={followLink} />
-      </div>
-      <div style={hidden === true ? { display: "none" } : { display: "flex" }} className="menu-container">
-        <NavLink item="About" handleClick={followLink} />
-        <NavDropdown
-          sectionLabel="Your Job"
-          items={["Overview", "Window Schedule", "Wall Heights"]}
-          itemClick={followLink}
-          style={subHidden1 === true ? { display: "none" } : { display: "flex" }}
-          handleClick={displaySubMenu1}
-        />
-        <NavDropdown
-          sectionLabel="Get Cutting"
-          items={["Plate Lists", "Wall Lists", "Rake Walls", "Fascia"]}
-          itemClick={followLink}
-          style={subHidden2 === true ? { display: "none" } : { display: "flex" }}
-          handleClick={displaySubMenu2}
-        />
+        <div className={`container main ${hidden === true ? "" : "main-clicked"}`}>
+          <NavLink item="About" handleClick={followLink} />
+          <NavDropdown
+            sectionLabel="Your Job"
+            items={["Overview", "Window Schedule", "Wall Heights"]}
+            itemClick={followLink}
+            clickedClass={subHidden1 === true ? "" : "dropdown-items-clicked"}
+            handleClick={displaySubMenu1}
+          />
+          <NavDropdown
+            sectionLabel="Get Cutting"
+            items={["Plate Lists", "Wall Lists", "Rake Walls", "Fascia"]}
+            itemClick={followLink}
+            clickedClass={subHidden2 === true ? "" : "dropdown-items-clicked"}
+            handleClick={displaySubMenu2}
+          />
+        </div>
       </div>
     </div>
   )
