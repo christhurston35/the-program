@@ -2,7 +2,7 @@ import React from "react";
 
 function NavLink(props) {
   return (
-    <a className="nav-link" onClick={props.handleClick}>{props.item}</a>
+    <a className="link" onClick={props.handleClick}>{props.item}</a>
   )
 }
 

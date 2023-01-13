@@ -11,7 +11,7 @@ let style = {
 function Home() {
   return(
     <div>
-      
+      <h1>THE PROGRAM</h1>
     </div>
   )
 }
