@@ -14,9 +14,8 @@
 .content {
   background-image: url("../../images/end-grain2.jpg");
   background-attachment: scroll;
-  background-position: 80% 0%;
   background-repeat: no-repeat;
-  background-size: 120%;
+  background-size: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
