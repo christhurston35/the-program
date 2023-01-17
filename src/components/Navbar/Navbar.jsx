@@ -1,58 +1,55 @@
 import React from "react";
-import NavBrand from "./NavBrand";
+import NavBrand from "../Header/Brand";
 import NavLink from "./NavLink";
 import "./navbar.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faHouseChimney, faCompassDrafting, faFan, faCircleInfo, faCircleUser, faGear } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faHouseChimney, faCompassDrafting, faFan, faCircleInfo, faGear } from "@fortawesome/free-solid-svg-icons";
 import NavDropdown from "./NavDropdown";
-
-function addClass() {
-  console.log("Clicked")
-}
 
 function followLink() {
   console.log("Hello!")
 }
 
-function Navbar() {
+function Navbar(props) {
 
   return (
-    <div>
-      <div className="header">
-        <FontAwesomeIcon className="hamburger-icon" icon={faBars} />
-        <NavBrand handleClick={followLink} />
-      </div>
-      <div className="navbar">
-        <div className="top">
-          <div className="nav-item">
-            <FontAwesomeIcon className="nav-icon" icon={faHouseChimney} />
-            <NavLink item="Home" handleClick={followLink} />
+    <>
+      <div className="navbar-background">
+        <div className={`navbar ${props.navState === false ? "hidden" : ""}`}>
+          <div className="top">
+            <FontAwesomeIcon onClick={props.toggleSlide} className="back-arrow" icon={faArrowLeft} />
           </div>
-          <div className="nav-item">
-            <FontAwesomeIcon className="nav-icon" icon={faCompassDrafting} />
-            <NavLink item="Your Job" handleClick={addClass} />
+          <div className="middle">
+            <div className="nav-item">
+              <FontAwesomeIcon className="nav-icon" icon={faHouseChimney} />
+              <NavLink item="Home" handleClick={followLink} />
+            </div>
+            <div className="nav-item">
+              <FontAwesomeIcon className="nav-icon" icon={faCompassDrafting} />
+              <NavLink item="Your Job" handleClick={followLink} />
+            </div>
+            <div className="nav-item">
+              <FontAwesomeIcon className="nav-icon" icon={faFan} />
+              <NavLink item="Get Cutting" handleClick={followLink} />
+            </div>
+            <div className="nav-item">
+              <FontAwesomeIcon className="nav-icon" icon={faCircleInfo} />
+              <NavLink item="About" handleClick={followLink} />
+            </div>
           </div>
-          <div className="nav-item">
-            <FontAwesomeIcon className="nav-icon" icon={faFan} />
-            <NavLink item="Get Cutting" handleClick={addClass} />
-          </div>
-          <div className="nav-item">
-            <FontAwesomeIcon className="nav-icon" icon={faCircleInfo} />
-            <NavLink item="About" handleClick={followLink} />
+          <div className="bottom">
+            <div className="nav-item">
+              <FontAwesomeIcon className="nav-icon" icon={faGear} />
+              <NavLink item="Settings" handleClick={followLink} />
+            </div>
+            <hr />
+            <div className="nav-item">
+              <NavLink item="Sign in" handleClick={followLink} />
+            </div>
           </div>
         </div>
-        <div className="bottom">
-          <div className="nav-item">
-            <FontAwesomeIcon className="nav-icon" icon={faGear} />
-            <NavLink item="Settings" handleClick={followLink} />
-          </div>
-          <hr />
-          <div className="nav-item">
-            <NavLink item="Sign in" handleClick={followLink} />
-          </div>
-        </div>
       </div>
-    </div>
+    </>
   )
 }
 

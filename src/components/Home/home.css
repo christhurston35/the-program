@@ -1,4 +1,36 @@
-div {
-  background-color: grey;
-  height: 100vh;
+#home {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  transition: box-shadow .6s, border-radius, transform 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.hero {
+  color: rgb(18, 18, 18);
+  margin: 4rem 0.5rem;
+}
+
+.content {
+  background-image: url("../../images/end-grain2.jpg");
+  background-attachment: scroll;
+  background-position: 80% 0%;
+  background-repeat: no-repeat;
+  background-size: 120%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  top: 3.8rem;
+  text-align: center;
+}
+
+.collapsed {
+  border-radius: 10px;
+  box-shadow: 0 0 2rem 1rem rgb(15, 15, 15), inset 0 0 8rem;
+  transform: translateX(40%) scale(50%);
+}
+
+.sidekick {
+  color: rgb(18, 18, 18);
 }

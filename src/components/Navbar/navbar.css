@@ -1,31 +1,17 @@
-/*** Header ***/
-
-.hamburger-icon {
-  font-size: 2rem;
-  padding: 1rem;
-  color: #d82028;
-}
-
-.header {
-  background-image: linear-gradient(to right, rgb(35, 35, 35), rgb(25, 25, 25));
-  box-shadow: 0 1px 4px;
-  height: auto;
-  overflow: auto;
-}
-
-.logo {
-  float: right;
-  height: auto;
-  padding: 0.5rem;
-  position: relative;
-  width: 3rem;
-}
-
 /*** Navbar ***/
+
+.back-arrow {
+  background-color: rgba(0, 0, 0, 0.219);
+  border-radius: 0.2rem;
+  border: 0.1rem solid;
+  color: #d82028;
+  font-size: 2rem;
+  padding: 0.6rem 0.6rem;
+  margin: 1rem;
+}
 
 .bottom {
   display: flex;
-  margin-bottom: 5rem;
 }
 
 .bottom hr {
@@ -34,20 +20,31 @@
   height: 45%;
 }
 
-.navbar {
-  background-image: radial-gradient(at 90%, rgb(20, 20, 20), rgb(45, 45, 45));
+.hidden {
+  transform: translateX(-85%);
+}
+
+.navbar {  
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  position: absolute;
   height: 100vh;
+  justify-content: space-between;
+  position: fixed;
   top: 0;
+  transition: transform 0.4s ease-in-out;
+  width: 100%;
+}
+
+.navbar-background {
+  background-image: radial-gradient(at 90%, rgb(15, 15, 15), rgb(45, 45, 45));
+  height: 100vh;
+  position: fixed;
   width: 100%;
   z-index: -1;
 }
 
 .top {
-  margin-top: 5rem;
+  height: 82px;
 }
 
 /*** Link styling ***/
@@ -64,7 +61,7 @@
 }
 
 .link {
- font-size: 1.75rem;
+ font-size: 1.75em;
  margin: 1rem 1rem;
  padding: 0.5rem 0;
 }
