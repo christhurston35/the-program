@@ -1,0 +1,38 @@
+.hamburger-icon {
+  background-color: rgba(0, 0, 0, 0.219);
+  border: 0.1rem solid;
+  border-radius: 0.2rem;
+  bottom: 1rem;
+  color: #d82028;
+  font-size: 2rem;
+  left: 1rem;
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+  position: fixed;
+}
+
+.header {
+  align-items: center;
+  background-image: linear-gradient(to right, rgb(35, 35, 35), rgb(25, 25, 25));
+  box-shadow: 0 1px 4px;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  position: fixed;
+  width: 100%;
+}
+
+#hero-title {
+  display: inline-block;
+  font-family: "Oswald",sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0 0.5rem;
+}
+
+.logo {
+  float: right;
+  height: auto;
+  padding: 0.5rem;
+  position: relative;
+  width: 3rem;
+}

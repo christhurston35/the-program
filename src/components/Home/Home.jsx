@@ -1,17 +1,17 @@
-import React from "react";
-import endlessWalls from "../../images/endless-walls.png"
+import React, { useState } from "react";
+import tallTallWall from "../../images/tall-tall-wall.png";
+import Header from "../Header/Header";
+import "./home.css"
 
-let style = {
-  maxWidth: "175%",
-  position: "relative",
-  right: "90px",
-  zIndex: -1
-}
+function Home(props) {
 
-function Home() {
-  return(
-    <div>
-      
+  return (
+    <div id="home" className={`${props.homeState === true ? "" : "collapsed"}`}>
+      <Header toggleExpansion={props.toggleExpansion} />
+      <div className="content">
+        <h1 className="hero">A tool designed to streamline your job</h1>
+        <h3 className="sidekick">Head over to "Your job" to get started, or check out the "About" section to read more on how it works</h3>
+      </div>
     </div>
   )
 }
