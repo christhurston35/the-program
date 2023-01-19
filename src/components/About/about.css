@@ -1,0 +1,9 @@
+#about {
+  background-image: linear-gradient(-10deg, rgb(36, 36, 36) 0%, rgb(90, 90, 90) 50%, rgb(36, 36, 36));
+  overflow: auto;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  transition: box-shadow .6s, border-radius, transform 0.3s ease-in-out;
+  z-index: 1;
+}

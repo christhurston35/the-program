@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Header from "./Header/Header";
 import Navbar from "./Navbar/Navbar";
 import Home from "./Home/Home";
+import About from "./About/About";
 import "./app.css";
 
 function App() {
@@ -10,27 +10,30 @@ function App() {
   const [navInView, setNavInView] = useState(false);
 
   function toggleNavbar() {
-    let home = document.getElementById("home");
+    let about = document.getElementById("about");
 
     if (pageExpanded === true) {
       setPageExpanded(false);
       setNavInView(true);
-      home.addEventListener("click", () => {
+      about.addEventListener("click", () => {
         setPageExpanded(true);
         setNavInView(false);
       }, { once: true })
-    } else {
+    } else if (pageExpanded === false) {
+      console.log("Working");
       setPageExpanded(true);
       setNavInView(false);
     }
   }
 
-  
+  function followLink() {
+    console.log("Hello!")
+  }
 
   return (
     <>
-      <Navbar navState={navInView} toggleSlide={toggleNavbar} />
-      <Home homeState={pageExpanded} toggleExpansion={toggleNavbar} />
+      <Navbar navState={navInView} toggleSlide={toggleNavbar} followLink={followLink} />
+      <About pageState={pageExpanded} toggleExpansion={toggleNavbar} followLink={followLink} />
     </>
   )
 }
